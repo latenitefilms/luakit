@@ -1,5 +1,4 @@
 // swift-tools-version:5.5
-
 import PackageDescription
 
 let package = Package(
@@ -14,16 +13,9 @@ let package = Package(
     ],
     dependencies: [],
     targets: [
-        .systemLibrary(
-            name: "liblua",
-            pkgConfig: "lua",
-            providers: [
-                .brewItem(["lua"])
-            ]
-        ),
         .target(
             name: "LuaKit",
-            dependencies: ["liblua"],
+            dependencies: [],            
             swiftSettings: [
                 .unsafeFlags(["-Xfrontend", "-validate-tbd-against-ir=none"])
             ]
